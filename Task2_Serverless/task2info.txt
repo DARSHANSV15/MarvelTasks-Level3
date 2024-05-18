@@ -1,0 +1,70 @@
+This demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.
+steps:
+1>Install Serverless.
+	$ npm install -g serverless
+2>Create aws account and IAM user in it.
+3>Copy the keys and Enter them in serverless configuration in terminal.
+4>Create a template and deploy.
+5>Using the api end point provided we can access the function.
+
+
+# Serverless with Node.js
+
+* Functions as a Service (FaaS)
+
+	 The goal is to completely abstract away servers from the developer and only bill based on the amount of times the functions have been invoked. Meaning services such as these are easy to scale.
+
+AWS Lambda
+AWS Lambda is a compute service that lets you run code without provisioning or managing servers.
+
+	Lambda is an event based system for running code in the cloud. You don’t worry about servers, only the code you write. It scales automatically and only charges you for the time it actually is running the code, the compute time. But, most importantly, it scales automatically! How awesome is that. No more worrying about if the EC2 instance you spun up is large enough to serve all your users.
+
+AWS API Gateway
+Lambda would be incomplete without the API Gateway. All lambda functions require an event to be triggered to invoke them. Gateway provides the REST endpoints which trigger the functions. 
+
+The Serverless framework
+Serverless is your toolkit for deploying and operating serverless architectures. Focus on your application, not your infrastructure.
+_____________________________________________________________________________________________
+
+It sucks that I have to deploy the function to AWS every time I want to test it out. With that awkward digression, voilà, Serverless Offline! Now I can finally test all the code locally before pushing it to AWS. 
+
+1. Initialize npm in the service directory
+	Now you need to step inside the my-service directory and open up a terminal window in there. Once inside you can run:
+	$ npm init
+
+2. Install Serverless Offline
+	With npm initialized there nothing more to do than just run the installation.
+	$ npm install serverless-offline --save-dev
+	The --save-dev flag will save the package as a development dependency.
+
+Before moving on, you first need to let the terminal know it has a new command available. So within the serverless.yml file add a two new lines.
+
+# serverless.yml
+service: sls-offline
+
+provider:
+	name: aws
+	runtime: nodejs6.10
+
+functions:
+	hello:
+		handler: handler.hello
+		events:
+			- http:
+				path: /sls-offline
+				method: get
+
+# adding these two lines
+plugins:
+	serverless-offline
+
+
+3. Run it locally
+	To make sure you’ve installed everything correctly run:
+	$ serverless
+	You should see an option named offline among the various choices listed. If you do you’re good to go.
+
+	With all that out of the way, go ahead and spin up the local emulation of Lambda and API Gateway.
+	$ serverless offline start
+
+	You’ll see all your routes listed in the terminal. Your Lambdas are now running on your localhost. The default port is 3000. Feel free to open up a browser and check it out. 	Hitting the endpoint [http://localhost:3000/hello/get](http://localhost:3000/hello/get) will send back the same text as in the example above with the deployed function.

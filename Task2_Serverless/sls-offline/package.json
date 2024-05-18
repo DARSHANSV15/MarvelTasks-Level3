@@ -1,0 +1,14 @@
+{
+  "name": "sls-offline",
+  "version": "1.0.0",
+  "description": "This project aims to test the serverless archietecture in offline mode without having to push to the AWS Lambda console each time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Darshan S V",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^13.5.0"
+  }
+}

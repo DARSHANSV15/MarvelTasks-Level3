@@ -1,0 +1,17 @@
+service: sls-offline
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  sls-offline:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /sls-offline
+          method: get
+
+plugins:
+  - serverless-offline
