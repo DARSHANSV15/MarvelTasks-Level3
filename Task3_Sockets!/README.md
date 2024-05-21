@@ -67,3 +67,6 @@ io.on("connection", (socket) => {
   });
 });
 ```
+______
+## References
+* [medium.com - real time chat application using socket.io](https://medium.com/swlh/real-time-chat-application-using-socket-io-in-node-js-37806e98918c)

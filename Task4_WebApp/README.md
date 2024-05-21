@@ -80,3 +80,5 @@ To get this project up and running locally on your computer:
     ```
 4. Open a browser to http://localhost:3000/ to open the library site.
 _____
+## References
+* [mozilla.org - Express_NodeJS](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)

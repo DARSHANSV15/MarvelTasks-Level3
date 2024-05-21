@@ -83,6 +83,7 @@ $ serverless offline start
 You’ll see all your routes listed in the terminal. Your Lambdas are now running on your localhost. The default port is 3000. Feel free to open up a browser and check it out. Hitting the endpoint [http://localhost:3000/sls-offline](http://localhost:3000/sls-offline) will send back the same text as in the example above with the deployed function.
 
 ## References
+- [MARVEL Website](https://hackernoon.com/a-crash-course-on-serverless-with-node-js-632b37d58b44)
 - [Serverless Framework Tutorial - YouTube](https://youtu.be/AgOmeANl3ls?feature=shared)
 - [Deploying Node.js Apps with Serverless Framework - YouTube](https://youtu.be/VvYADzRwJK8?feature=shared)
 - [Building Serverless APIs with AWS Lambda - YouTube](https://youtu.be/90pVRK49AQM?feature=shared)
