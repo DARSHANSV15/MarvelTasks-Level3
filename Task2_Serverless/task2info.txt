@@ -68,3 +68,11 @@ plugins:
 	$ serverless offline start
 
 	You’ll see all your routes listed in the terminal. Your Lambdas are now running on your localhost. The default port is 3000. Feel free to open up a browser and check it out. 	Hitting the endpoint [http://localhost:3000/hello/get](http://localhost:3000/hello/get) will send back the same text as in the example above with the deployed function.
+
+_________________________________________________________________________________________________________________________________________________________________________________________
+
+# References
+
+https://youtu.be/AgOmeANl3ls?feature=shared
+https://youtu.be/VvYADzRwJK8?feature=shared
+https://youtu.be/90pVRK49AQM?feature=shared
